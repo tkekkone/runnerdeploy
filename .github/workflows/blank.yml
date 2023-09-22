@@ -1,0 +1,16 @@
+name: Actions Runner Controller Demo
+on:
+  workflow_dispatch:
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: arc-runner-set
+    strategy:
+      matrix:
+      # You need to use the INSTALLATION_NAME from the previous step
+        name: ["test1", "test2", "test3", "test4", "test5", "test6"]
+      
+    steps:
+    - run: sleep 30s
+    - run: echo "🎉 This job uses runner scale set runners! Hello ${{ matrix.name }}"
+    - run: sleep 30s
